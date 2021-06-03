@@ -1,5 +1,11 @@
 language: cpp
 
+compiler:
+- gcc
+- clang
+os:
+ - linux
+
 jobs:
   include:
   - name: "all projects"
@@ -7,8 +13,9 @@ jobs:
     - cmake -H. -B_build
     - cmake --build _build
   - name: "each CMakeLists.txt"
-    script:
-    - source ./script
+
+script:
+- source ./script
 
 addons:
   apt:
